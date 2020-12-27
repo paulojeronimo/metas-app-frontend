@@ -13,15 +13,13 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
 
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        if (newTodo.trim() !== "") {
-            addTodo(newTodo)
-            setNewTodo("")
-        }
+        newTodo.trim() !== "" && addTodo(newTodo)
+        setNewTodo("")
     }
 
     return (
         <form>
-            <input type="text" onChange={handleChange}/>
+            <input type="text" value={newTodo} onChange={handleChange}/>
             <button type="submit" onClick={handleSubmit}>Add Todo</button>
         </form>
     )
