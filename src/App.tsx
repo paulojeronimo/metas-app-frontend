@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TodoListItem } from './TodoListItem'
+import { TodoList } from './TodoList'
 
 const initialTodos: Array<Todo> = [
   {text: "Terminar o app TODO", complete: true },
@@ -21,12 +21,7 @@ const App: React.FC = () => {
     setTodos(newTodos)
   }
 
-  return (
-    <>
-      <TodoListItem todo={todos[0]} toogleTodo={toogleTodo}/>
-      <TodoListItem todo={todos[1]} toogleTodo={toogleTodo}/>
-    </>
-  )
+  return <TodoList todos={todos} toogleTodo={toogleTodo}/>
 }
 
 export default App;
