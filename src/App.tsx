@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AddTodoForm } from './AddTodoForm'
 import { TodoList } from './TodoList'
 
 const initialTodos: Array<Todo> = [
@@ -21,7 +22,10 @@ const App: React.FC = () => {
     setTodos(newTodos)
   }
 
-  return <TodoList todos={todos} toogleTodo={toogleTodo}/>
+  return <>
+    <TodoList todos={todos} toogleTodo={toogleTodo}/>
+    <AddTodoForm/>
+  </>
 }
 
 export default App;
