@@ -3,6 +3,7 @@ import "./TodoListItem.css"
 
 interface TodoListItemProps {
     todo: Todo
+    toogleTodo: ToogleTodo
 }
 
 export const TodoListItem: React.FC<TodoListItemProps> = ({ todo }) => {
