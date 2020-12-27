@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
   return <>
     <TodoList todos={todos} toogleTodo={toogleTodo}/>
-    <AddTodoForm/>
+    <AddTodoForm addTodo={(newTodo: string) => setTodos([...todos, {text: newTodo, complete: false}])}/>
   </>
 }
 

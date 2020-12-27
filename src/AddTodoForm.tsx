@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 
 interface AddTodoFormProps {
-    addTodo: (newTodo: string) => void
+    addTodo: AddTodo
 }
 
 export const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
@@ -13,7 +13,10 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
 
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        addTodo(newTodo)
+        if (newTodo.trim() !== "") {
+            addTodo(newTodo)
+            setNewTodo("")
+        }
     }
 
     return (
