@@ -1,6 +1,10 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 
-export const AddTodoForm: React.FC = () => {
+interface AddTodoFormProps {
+    addTodo: (newTodo: string) => void
+}
+
+export const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
     const [newTodo, setNewTodo] = useState("")
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -9,6 +13,7 @@ export const AddTodoForm: React.FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
+        addTodo(newTodo)
     }
 
     return (
